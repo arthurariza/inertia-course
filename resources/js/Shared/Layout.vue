@@ -1,9 +1,16 @@
 <script setup>
-import Nav from "./Nav.vue";</script>
+import Nav from "./Nav.vue";
+import {computed} from "vue";
+import {usePage} from "@inertiajs/vue3";
+
+const username = computed(() => usePage().props.auth.user.username);
+</script>
 
 <template>
     <header class="layout__header">
         <h1>My App</h1>
+
+        <h2>{{ username }}</h2>
 
         <Nav/>
     </header>
