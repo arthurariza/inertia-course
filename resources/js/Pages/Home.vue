@@ -1,4 +1,6 @@
 <template>
+    <Nav/>
+    
     <h1>Welcome, {{ name }}</h1>
 
     <p>Frameworks we will use:</p>
@@ -8,6 +10,8 @@
 </template>
 
 <script setup>
+import Nav from "../Shared/Nav.vue";
+
 defineProps({
     'name': String,
     'frameworks': Array
