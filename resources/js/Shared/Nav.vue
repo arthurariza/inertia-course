@@ -1,11 +1,12 @@
 <script setup>
-import {Link} from "@inertiajs/vue3";</script>
+import {Link} from "@inertiajs/vue3";
+import NavLink from "./NavLink.vue";</script>
 
 <template>
     <nav>
-        <Link href="/">Home</Link>
-        <Link href="/users">Users</Link>
-        <Link href="/settings">Settings</Link>
+        <NavLink :active="$page.component === 'Home'" href="/">Home</NavLink>
+        <NavLink :active="$page.component === 'Users'" href="/users">Users</NavLink>
+        <NavLink :active="$page.component === 'Settings'" href="/settings">Settings</NavLink>
         <Link as="button" href="/logout" method="post">Settings</Link>
     </nav>
 </template>
