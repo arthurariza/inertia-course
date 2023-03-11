@@ -4,7 +4,7 @@ import Layout from "./Shared/Layout.vue";
 
 createInertiaApp({
     resolve: name => {
-        const pages = import.meta.glob('./Pages/**/*.vue', {eager: true})
+        const pages = import.meta.glob('./Pages/**/*.vue', {eager: false})
         let page = pages[`./Pages/${name}.vue`]
         page.default.layout = page.default.layout || Layout
         return page
