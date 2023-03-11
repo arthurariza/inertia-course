@@ -8,7 +8,7 @@ const username = computed(() => usePage().props.auth.user.username);
 
 <template>
     <header class="layout__header">
-        <h1>My App</h1>
+        <input type="text" value="My App"/>
 
         <h2>{{ username }}</h2>
 

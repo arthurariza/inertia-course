@@ -1,10 +1,13 @@
-<script setup>
-import Layout from "../Shared/Layout.vue";</script>
+<script>
+import Layout from "../Shared/Layout.vue";
+
+export default {
+    layout: Layout
+}
+</script>
 
 <template>
-    <Layout>
-        <h1>Settings</h1>
-    </Layout>
+    <h1>Settings</h1>
 </template>
 
 <style scoped>

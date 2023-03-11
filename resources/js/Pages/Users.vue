@@ -1,5 +1,12 @@
-<script setup>
+<script>
 import Layout from "../Shared/Layout.vue";
+
+export default {
+    layout: Layout
+}
+</script>
+
+<script setup>
 
 defineProps({
     time: String
@@ -8,12 +15,10 @@ defineProps({
 </script>
 
 <template>
-    <Layout>
-        <h1>Users</h1>
+    <h1>Users</h1>
 
-        <p style="margin-top: 1200px">The current time is {{ time }}</p>
-        <Link href="/users" preserve-scroll>Refresh</Link>
-    </Layout>
+    <p style="margin-top: 1200px">The current time is {{ time }}</p>
+    <Link href="/users" preserve-scroll>Refresh</Link>
 </template>
 
 <style scoped>
