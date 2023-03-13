@@ -38,6 +38,24 @@ Route::get('/users', function () {
     ]);
 });
 
+Route::post('/users', function () {
+    $validated = Request::validate(
+        [
+            'name' => 'required',
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:3']
+        ]
+    );
+
+    User::create($validated);
+
+    return redirect('/users');
+});
+
+Route::get('/users/create', function () {
+    return Inertia::render('UsersCreate');
+});
+
 Route::get('/settings', function () {
     return Inertia::render('Settings');
 });
