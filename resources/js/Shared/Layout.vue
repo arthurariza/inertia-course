@@ -7,6 +7,10 @@ const username = computed(() => usePage().props.auth.user.username);
 </script>
 
 <template>
+    <Head>
+        <meta content="This is the default description" head-key="description" name="description"/>
+        <link href="/favicon.ico" rel="icon" type="image/svg+xml"/>
+    </Head>
     <header class="layout__header">
         <input type="text" value="My App"/>
 

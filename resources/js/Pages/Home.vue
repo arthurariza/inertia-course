@@ -6,6 +6,8 @@ defineProps({
 </script>
 
 <template>
+    <Head title="Home"/>
+
     <h1>Welcome, {{ name }}</h1>
 
     <p>Frameworks we will use:</p>
