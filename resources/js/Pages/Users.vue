@@ -1,7 +1,9 @@
 <script setup>
+import Pagination from "../Shared/Pagination.vue";
+
 defineProps({
     time: String,
-    users: Array
+    users: Object
 });
 
 </script>
@@ -11,12 +13,10 @@ defineProps({
     <h1>Users</h1>
 
     <ul>
-        <li v-for="user in users" :key="user.id" v-text="user.name"/>
+        <li v-for="user in users.data" :key="user.id" v-text="user.name"/>
     </ul>
 
-    <p style="margin-top: 2rem">The current time is {{ time }}</p>
-
-    <Link href="/users" preserve-scroll>Refresh</Link>
+    <Pagination :links="users.links"/>
 </template>
 
 <style scoped>

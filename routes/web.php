@@ -24,8 +24,7 @@ Route::get('/', function () {
 
 Route::get('/users', function () {
     return Inertia::render('Users', [
-        'time' => now()->toTimeString(),
-        'users' => User::select('id', 'name')->get(),
+        'users' => User::select('id', 'name')->paginate(10),
     ]);
 });
 
