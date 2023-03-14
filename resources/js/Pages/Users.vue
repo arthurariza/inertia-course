@@ -24,6 +24,10 @@ watch(search, (value) => {
 <template>
     <Head title="Users"/>
 
+    <Link href="/users/create">
+        Create User
+    </Link>
+
     <h1>Users</h1>
 
     <input v-model="search" type="text">
