@@ -26,7 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
         return Inertia::render('Home', [
             'name' => 'Arthur',
-            'frameworks' => ['Laravel', 'Vue', 'Inertia']
+            'frameworks' => ['Laravel', 'Vue', 'Inertia'],
         ]);
     });
 
@@ -43,8 +43,8 @@ Route::middleware(['auth'])->group(function () {
             'users' => $users,
             'filters' => Request::only(['search']),
             'can' => [
-                'createUser' => Auth::user()->can('create', User::class)
-            ]
+                'createUser' => Auth::user()->can('create', User::class),
+            ],
         ]);
     });
 
@@ -55,7 +55,7 @@ Route::middleware(['auth'])->group(function () {
             [
                 'name' => 'required',
                 'email' => ['required', 'email'],
-                'password' => ['required', 'min:3']
+                'password' => ['required', 'min:3'],
             ]
         );
 
