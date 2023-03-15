@@ -7,7 +7,7 @@ import NavLink from "./NavLink.vue";</script>
         <NavLink :active="$page.component === 'Home'" href="/">Home</NavLink>
         <NavLink :active="$page.component === 'Users'" href="/users">Users</NavLink>
         <NavLink :active="$page.component === 'Settings'" href="/settings">Settings</NavLink>
-        <Link as="button" href="/logout" method="post">LogOut</Link>
+        <Link as="button" href="/logout" method="delete">Log Out</Link>
     </nav>
 </template>
 
