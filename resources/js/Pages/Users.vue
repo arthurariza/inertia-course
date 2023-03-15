@@ -1,8 +1,8 @@
 <script setup>
-import Pagination from "@/Shared/Pagination.vue";
 import {ref, watch} from "vue";
 import {router} from "@inertiajs/vue3";
 import debounce from "lodash.debounce"
+import Pagination from "@/Shared/Pagination.vue";
 
 const props = defineProps({
     filters: Object,
@@ -38,7 +38,7 @@ watch(search, debounce((value) => {
         <li v-for="user in users.data" :key="user.id" v-text="user.name"/>
     </ul>
 
-    <Pagination :links="users.links"/>
+    <Pagination :links="users.meta.links"/>
 </template>
 
 <style scoped>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
@@ -31,13 +32,12 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::get('/users', function () {
-        $users = User::query()
-            ->select(['id', 'name', 'can' => true])
+        $users = UserResource::collection(User::query()
             ->when(Request::input('search'), function ($query, $search) {
                 $query->where('name', 'like', "%{$search}%");
             })
             ->paginate(10)
-            ->withQueryString();
+            ->withQueryString());
 
         return Inertia::render('Users', [
             'users' => $users,
